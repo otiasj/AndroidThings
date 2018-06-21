@@ -25,24 +25,26 @@ class MainActivity : Activity() {
 
             buttons.setOnClickListener(HatButton.ID.A, { _, _, pressed ->
                 Unit
-                led.turn(Led.Color.RED, pressed)
+                led.turn(Led.ID.RED, pressed)
             })
 
             buttons.setOnClickListener(HatButton.ID.B, { _, _, pressed ->
                 Unit
-                led.turn(Led.Color.GREEN, pressed)
+                led.turn(Led.ID.GREEN, pressed)
 
             })
 
             buttons.setOnClickListener(HatButton.ID.C, { _, _, pressed ->
                 Unit
-                led.turn(Led.Color.BLUE, pressed)
+                led.turn(Led.ID.BLUE, pressed)
             })
+
+            led.blink(Led.ID.STRIP)
         }
     }
 
-    override fun onDestroy() {
-        super.onDestroy()
+    override fun onStop() {
+        super.onStop()
         led.clean()
         buttons.clean()
     }
