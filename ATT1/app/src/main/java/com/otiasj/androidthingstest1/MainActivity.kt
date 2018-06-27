@@ -4,8 +4,7 @@ package com.otiasj.androidthingstest1
 import android.app.Activity
 import android.os.Bundle
 import com.google.android.things.pio.PeripheralManager
-import com.otiasj.androidthingstest1.rainbow.HatButton
-import com.otiasj.androidthingstest1.rainbow.Led
+import com.otiasj.androidthingstest1.rainbow.*
 import timber.log.Timber
 import timber.log.Timber.DebugTree
 import java.io.IOException
@@ -14,6 +13,9 @@ class MainActivity : Activity() {
 
     val led = Led()
     val buttons = HatButton()
+    val piezo = Piezo()
+    val temperatureSensor = TemperatureSensor()
+    val topDisplay = TopDisplay()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -40,6 +42,12 @@ class MainActivity : Activity() {
             })
 
             led.blink(Led.ID.STRIP)
+
+            piezo.play(Piezo.Note.DO, 5000)
+
+            val temperature = temperatureSensor.getTemperature()
+
+            topDisplay.displayMessage(temperature.toString())
         }
     }
 
@@ -47,6 +55,9 @@ class MainActivity : Activity() {
         super.onStop()
         led.clean()
         buttons.clean()
+        piezo.clean()
+        temperatureSensor.clean()
+        topDisplay.clean()
     }
 
     /**
