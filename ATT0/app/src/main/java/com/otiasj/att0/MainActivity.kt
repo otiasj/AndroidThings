@@ -1,10 +1,10 @@
-package com.otiasj.androidthingstest1
+package com.otiasj.att0
 
 
 import android.app.Activity
 import android.os.Bundle
 import com.google.android.things.pio.PeripheralManager
-import com.otiasj.androidthingstest1.rainbow.*
+import com.otiasj.att0.rainbow.*
 import timber.log.Timber
 import timber.log.Timber.DebugTree
 import java.io.IOException

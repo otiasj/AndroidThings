@@ -1,4 +1,4 @@
-package com.otiasj.androidthingstest1.rainbow
+package com.otiasj.att0.rainbow
 
 import com.google.android.things.contrib.driver.bmx280.Bmx280
 import com.google.android.things.contrib.driver.rainbowhat.RainbowHat

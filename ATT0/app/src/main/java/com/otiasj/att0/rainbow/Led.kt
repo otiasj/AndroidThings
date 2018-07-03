@@ -1,4 +1,4 @@
-package com.otiasj.androidthingstest1.rainbow
+package com.otiasj.att0.rainbow
 
 import android.graphics.Color
 import android.os.Handler

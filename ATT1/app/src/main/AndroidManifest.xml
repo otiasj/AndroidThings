@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest package="com.otiasj.androidthingstest1"
+<manifest package="com.otiasj.att1"
           xmlns:android="http://schemas.android.com/apk/res/android">
 
     <uses-permission android:name="com.google.android.things.permission.MANAGE_INPUT_DRIVERS"/>
@@ -7,7 +7,7 @@
     <application>
         <uses-library android:name="com.google.android.things"/>
 
-        <activity android:name=".MainActivity">
+        <activity android:name="com.otiasj.att1.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 

@@ -1,4 +1,4 @@
-package com.otiasj.androidthingstest1.rainbow
+package com.otiasj.att0.rainbow
 
 import com.google.android.things.contrib.driver.button.Button
 import com.google.android.things.contrib.driver.rainbowhat.RainbowHat

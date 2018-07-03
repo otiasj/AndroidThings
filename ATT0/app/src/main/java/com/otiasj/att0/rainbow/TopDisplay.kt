@@ -1,4 +1,4 @@
-package com.otiasj.androidthingstest1.rainbow
+package com.otiasj.att0.rainbow
 
 import com.google.android.things.contrib.driver.ht16k33.AlphanumericDisplay
 import com.google.android.things.contrib.driver.ht16k33.Ht16k33
