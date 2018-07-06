@@ -5,3 +5,6 @@ A sample project using the RainbowHat and the RainbowHat driver from [RainbowHat
 
 ##ATT1:
 Blinking a led on a breadboard
+
+##ATT2:
+Controlling an LED by a Button

@@ -14,7 +14,7 @@ import java.io.IOException
 class MainActivity : Activity() {
 
     private val LED_RED_PIN = "GPIO2_IO02"
-    private val INTERVAL_BETWEEN_BLINKS_MS = 1000L
+    private val INTERVAL_BETWEEN_BLINKS_MS = 50L
 
     private var ledRed: Gpio? = null
     private val handler = Handler()
@@ -40,6 +40,7 @@ class MainActivity : Activity() {
         super.onStop()
         Timber.d("OnStop")
         handler.removeCallbacks(blinkRunnable)
+        ledRed?.close()
     }
 
     private val blinkRunnable = object : Runnable {
