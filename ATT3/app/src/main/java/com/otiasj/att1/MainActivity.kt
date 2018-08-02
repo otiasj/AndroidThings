@@ -12,12 +12,12 @@ import java.io.IOException
 
 
 class MainActivity : Activity() {
-
-    private val LEDS: Array<String> =  arrayOf("GPIO2_IO01", "GPIO2_IO02")//, "GPIO2_IO01", "GPIO2_IO02", "GPIO2_IO01", "GPIO2_IO02", "GPIO2_IO01", "GPIO2_IO02")
     private val INTERVAL_BETWEEN_BLINKS_MS = 50L
 
-    private var ledGpio: Array<Gpio?> = arrayOfNulls<Gpio>(2)
+    private val LEDS: Array<String> =  arrayOf("GPIO2_IO03", "GPIO1_IO10", "GPIO2_IO01", "GPIO2_IO02", "GPIO2_IO00", "GPIO2_IO05", "GPIO2_IO07", "GPIO6_IO15")
+    private var ledGpio: Array<Gpio?> = arrayOfNulls<Gpio>(8)
     private var ledIndex:Int = 0
+
     private val handler = Handler()
 
 
@@ -31,8 +31,9 @@ class MainActivity : Activity() {
             for ((index, pin) in LEDS.withIndex()) {
                 ledGpio[index] = manager.openGpio(pin)
                 ledGpio[index]?.setDirection(Gpio.DIRECTION_OUT_INITIALLY_LOW)
+                ledGpio[index]?.value = false
             }
-            handler.post(blinkRunnable)
+           handler.post(blinkRunnable)
         } catch (e: IOException) {
             Timber.e(e,"Error on PeripheralIO API")
         }
@@ -52,7 +53,7 @@ class MainActivity : Activity() {
         override fun run() {
             try {
                 ledGpio[ledIndex]?.let {led ->
-                    if (led.value) {
+                    if (!led.value) {
                         ledIndex++
                         if (ledIndex >= LEDS.size) {
                             ledIndex = 0
