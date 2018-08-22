@@ -1,4 +1,5 @@
 # Android IOT tests
+[The stories on Medium](https://medium.com/android-things-and-sunfounder-super-kit-v3-0)
 
 ##ATT0: 
 A sample project using the RainbowHat and the RainbowHat driver from [RainbowHat driver on github](https://github.com/androidthings/contrib-drivers/tree/master/rainbowhat)
